@@ -1,6 +1,6 @@
 # oliver-portfolio-gen-2
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the my latest portfolio site (WIP)
 
 ## Recommended IDE Setup
 
