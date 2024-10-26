@@ -11,8 +11,11 @@
             <a href="javascript:" class="btn btn-secondary">Contact</a>
           </div>
         </div>
-        <div class="left_image">
-          <img :src="props.leftImage" alt="Placeholder Image" />
+        <div class="right_image" v-if="rightImage">
+          <img
+            :src="props.rightImage"
+            alt="Hero image positioned on the right"
+          />
         </div>
       </div>
     </div>
@@ -23,7 +26,7 @@
 import { defineProps } from 'vue'
 // Define the "cards" prop here
 const props = defineProps({
-  leftImage: String,
+  rightImage: String,
   subTitle: String,
   title: String,
   text: String,
@@ -33,22 +36,36 @@ const props = defineProps({
 <style lang="scss" scoped>
 .text_image_hero {
   padding: 150px 0px;
+  @media (max-width: 768px) {
+    padding: 50px 0px;
+  }
   .container {
     max-width: 1350px;
     margin: 0 auto;
     padding: 0px 25px;
+    @media (max-width: 768px) {
+      padding: 0px 15px;
+    }
 
     .inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 50px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
 
-      .left_image {
-        height: 300px;
-        width: 300px;
+      .right_image {
+        height: 500px;
+        width: 50%;
         flex: 1;
         border-radius: 10px;
+        overflow: hidden;
+        @media (max-width: 768px) {
+          width: 100%;
+          height: 300px;
+        }
         img {
           height: 100%;
           width: 100%;
@@ -58,6 +75,9 @@ const props = defineProps({
       .text {
         width: 70%;
         flex: 1;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
 
         h3 {
           font-size: 0.9rem;
@@ -74,6 +94,9 @@ const props = defineProps({
           padding-bottom: 30px;
           line-height: 1;
           color: #030f18;
+          @media (max-width: 768px) {
+            font-size: 2.2rem;
+          }
         }
         p {
           font-size: 1rem;

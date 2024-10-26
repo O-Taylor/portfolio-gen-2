@@ -1,15 +1,14 @@
 <template>
-  <globalHeader />
   <div id="app">
+    <globalHeader />
     <router-view />
+    <globalFooter />
   </div>
 </template>
 
 <script setup>
 import globalHeader from '@/components/global/header.vue'
-</script>
-
-<script>
+import globalFooter from '@/components/global/footer.vue'
 import { useHead } from '@vueuse/head'
 
 useHead({
@@ -27,6 +26,11 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {

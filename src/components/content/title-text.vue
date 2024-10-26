@@ -26,7 +26,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .title_text {
-  padding: 50px 0px;
+  padding: 40px 0px;
   .container {
     max-width: 1350px;
     margin: 0 auto;
@@ -57,6 +57,10 @@ const props = defineProps({
           line-height: 1.5;
           color: #1477b5;
           padding-bottom: 20px;
+          @media (max-width: 768px) {
+            font-size: 0.8rem;
+            padding-bottom: 10px;
+          }
         }
         h2 {
           font-size: 2rem;
@@ -66,6 +70,9 @@ const props = defineProps({
           padding-bottom: 20px;
           line-height: 1;
           color: #030f18;
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
         }
         p {
           font-size: 1rem;
@@ -74,7 +81,10 @@ const props = defineProps({
           max-width: 50%;
           color: #030f18;
           margin: auto;
-          padding-bottom: 30px;
+          padding-bottom: 0px;
+          @media (max-width: 768px) {
+            max-width: 100%;
+          }
         }
       }
     }
